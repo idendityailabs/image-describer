@@ -33,7 +33,6 @@ class ImageDescriptionRequest(BaseModel):
 
 @serve.deployment(
     ray_actor_options={"num_gpus": 1, "num_cpus": 10},
-    max_concurrent_queries=16,
     num_replicas=8
 )
 @serve.ingress(app)
